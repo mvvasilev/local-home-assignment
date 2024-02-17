@@ -1,0 +1,23 @@
+version: "3.4"
+
+services:
+  lha_bff:
+    build: ./lha-bff
+    ports:
+      - 8443:8443
+    environment:
+      SERVER_PORT: ${LHA_BFF_SERVER_PORT}
+      FRONTEND_ORIGIN: ${FRONTEND_ORIGIN}
+      REMOTE_ROOT_URI: ${REMOTE_ROOT_URI}
+      REMOTE_BUSINESS_IDS: ${REMOTE_BUSINESS_IDS}
+      SSL_ENABLED: ${LHA_BFF_SSL_ENABLED}
+      SSL_KEY_STORE_TYPE: ${LHA_BFF_SSL_KEY_STORE_TYPE}
+      SSL_KEY_STORE: ${LHA_BFF_SSL_KEY_STORE}
+      SSL_KEY_STORE_PASSWORD: ${LHA_BFF_SSL_KEY_STORE_PASSWORD}
+      SSL_KEY_ALIAS: ${LHA_BFF_SSL_KEY_ALIAS}
+
+
+  lha_frontend:
+    build: ./lha-frontend
+    ports:
+      - 5173:5173

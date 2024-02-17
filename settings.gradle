@@ -1,0 +1,5 @@
+rootProject.name = 'Local-Home-Assignment'
+
+include ":lha-bff"
+include ":lha-frontend"
+
